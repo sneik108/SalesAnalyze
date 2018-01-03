@@ -1,0 +1,35 @@
+
+@import "../../../scss/colors.scss";
+@import "../../../scss/mixins.scss";
+
+:host /deep/ {
+  .btn-secondary,{
+    @include dropdown-font-size;
+    @include text-line-break-dots;
+    // text-align: left;
+
+    // display: flex;
+    // align-items: center;
+
+    span.caret{
+      margin-left: auto;
+    }
+    .text-muted{
+      color: $Abbey !important;
+    }
+  }
+  .btn-secondary:hover{
+    border: 1px solid;
+    color: grey;
+  }
+  .ui-select-choices-row.active > a{
+    background-color: white;
+  }
+  a.dropdown-item{
+    background-color: white;
+  }
+}
+
+.multiselect-dropdown-name {
+  @include dropdown-name;
+}

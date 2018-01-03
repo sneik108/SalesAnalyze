@@ -1,0 +1,100 @@
+@import "../../../scss/colors.scss";
+
+:host /deep/ {
+  .data-table-wrapper .data-table-header {
+    min-height: 0;
+    margin: 0;
+    .title {
+      display: none;
+    }
+    .button-panel {
+      height: 0;
+    }
+  }
+  .data-table {
+    .data-table-row:hover {
+      background-color: $Foam !important;
+    }
+    .select-column {
+      width: 1rem;
+    }
+  }
+  .pagination-range {
+    font-weight: bold;
+  }
+  .pagination-controllers{
+    .pagination-limit {
+      width: 110px;
+      // margin-right: 0;
+      .input-group{
+        // height: 25px;
+
+        input.form-control{
+          width:50px;
+          margin-left: 5px;
+          border-radius: 3px;
+          // padding: 0;
+          // width: 50px;
+        }
+
+        .input-group-addon{
+          border:1px solid #A4A4A5;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+  .table th {
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: normal;
+    font-size: 0.8rem;
+  }
+  .table td {
+    padding: 0.9rem;
+    font-size: 0.8rem;
+    text-align: center;
+
+    .btn {
+      line-height: 0.85;
+    }
+  }
+  .table.table-condensed.data-table {
+    box-shadow: none;
+  }
+  table {
+    .row-odd {
+      background-color: transparent;
+    }
+    thead {
+      // display: none;
+      tr {
+        background-color: $Porcelain;
+      }
+    }
+  }
+
+  .refresh-button,
+  .column-selector-button {
+    visibility: hidden;
+  }
+
+  div .delete-header thead {
+    display: none !important;
+  }
+  
+  .pagination-page{
+    .input-group{
+
+      input.form-control{
+        width:50px;
+        margin-right:5px;
+        border-radius: 3px;
+      }
+      .input-group-addon{
+        border:1px solid #A4A4A5;
+        border-radius: 3px;
+      }
+    }
+  }
+}

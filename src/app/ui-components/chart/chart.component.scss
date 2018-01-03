@@ -1,0 +1,32 @@
+.migration-score {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  position: relative;
+  bottom: 15px;
+}
+
+.title{
+  font-size: 1rem;
+}
+
+.title-description{
+  font-size: 0.7rem;
+  position: relative;
+  bottom: 6px;
+}
+
+:host /deep/ {
+  .highcharts-container {
+    overflow-x: auto;
+  }
+  .highcharts-title {
+    font-size: 1rem !important;
+    font-weight: 700;
+    font-family: "Montserrat" !important;
+  }
+
+  //  .highcharts-root {
+  //    width: 50px;
+  //  }
+}

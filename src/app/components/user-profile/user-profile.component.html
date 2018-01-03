@@ -1,0 +1,222 @@
+<div class="container-window">
+    <app-window-body [name]="'User profile'" (deleteMeEvent)="destroyBody()" [innerWidth]="'1000px'">
+        <div class="container-feature-info">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="mt-1">
+                            <span>
+                                <img class="avatar" src="../../../assets/images/avatar.jpg">
+                            </span>
+                            <!-- <span class="bold-text"> Avatar: </span> -->
+                        </div>
+                        <div class="remove-btn">
+                            <button class="btn btn-default" (click)="removeProfile()">Remove Profile</button>
+                        </div>
+                    </div>
+                    <div class="col-10 user-info">
+                        <div>
+                            <h4>{{firstName}} {{lastName}}</h4>
+                        </div>
+                        <div class="row d-flex align-items-center">
+                            <div class="col-3">
+                                <span class="bold-text"> Name: </span>
+                            </div>
+                            <div class="col-3">
+                                <span *ngIf="!firstNameEditModeEnabled" class="text-name"> {{firstName}}</span>
+                                <input class="form-control" *ngIf="firstNameEditModeEnabled" [(ngModel)]="firstName" type="text">
+                            </div>
+                            <div class="edit-btn col-2">
+                                <span (click)="changeFirstNameEditModeEnabled()" class="cursor-pointer text-primary"> {{firstNameBtnName}}</span>
+                            </div>
+                        </div>
+                        <div class="row d-flex align-items-center mt-2">
+                            <div class="col-3">
+                                <span class="bold-text"> Last Name: </span>
+                            </div>
+                            <div class="col-3">
+                                <span *ngIf="!lastNameEditModeEnabled" class="text-name"> {{lastName}}</span>
+                                <input class="form-control" *ngIf="lastNameEditModeEnabled" [(ngModel)]="lastName" type="text">
+                            </div>
+                            <div class="edit-btn col-2">
+                                <span (click)="changeLastNameEditModeEnabled()" class="cursor-pointer text-primary"> {{lastNameBtnName}}</span>
+                            </div>
+                        </div>
+                        <div class="row d-flex align-items-center mt-2">
+                            <div class="col-3">
+                                <span class="bold-text"> Company: </span>
+                            </div>
+                            <div class="col-3">
+                                <span *ngIf="!companyEditModeEnabled" class="text-name"> {{company}}</span>
+                                <input class="form-control" *ngIf="companyEditModeEnabled" [(ngModel)]="company" type="text">
+                            </div>
+                            <div class="edit-btn col-2">
+                                <span (click)="changeCompanyEditModeEnabled()" class="cursor-pointer text-primary"> {{companyBtnName}}</span>
+                            </div>
+                        </div>
+                        <div class="row d-flex align-items-center mt-2">
+                            <div class="col-3">
+                                <span class="bold-text"> Country: </span>
+                            </div>
+                            <div class="col-3">
+                                <span *ngIf="!countryEditModeEnabled" class="text-name"> {{country}}</span>
+                                <input class="form-control" *ngIf="countryEditModeEnabled" [(ngModel)]="country" type="text">
+                            </div>
+                            <div class="edit-btn col-2">
+                                <span (click)="changeCountryEditModeEnabled()" class="cursor-pointer text-primary"> {{countryBtnName}}</span>
+                            </div>
+                        </div>
+                        <div class="row d-flex align-items-center mt-2 ">
+                            <div class="col-3">
+                                <span class="bold-text"> City: </span>
+                            </div>
+                            <div class="col-3">
+                                <span *ngIf="!cityEditModeEnabled" class="text-name"> {{city}}</span>
+                                <input class="form-control" *ngIf="cityEditModeEnabled" [(ngModel)]="city" type="text">
+                            </div>
+                            <div class="edit-btn col-2">
+                                <span (click)="changeCityEditModeEnabled()" class="cursor-pointer text-primary"> {{cityBtnName}}</span>
+                            </div>
+                        </div>
+                        <div class="row d-flex align-items-center mt-2">
+                            <div class="col-3">
+                                <span class="bold-text"> Email: </span>
+                            </div>
+                            <div class="col-3">
+                                <span *ngIf="!emailEditModeEnabled" class="text-name"> {{email}}</span>
+                                <input class="form-control" *ngIf="emailEditModeEnabled" [(ngModel)]="email" type="text">
+                            </div>
+                            <div class="edit-btn col-2">
+                                <span (click)="changeEmailEditModeEnabled()" class="cursor-pointer text-primary"> {{emailBtnName}}</span>
+                            </div>
+                        </div>
+                        <div class="row d-flex align-items-center mt-2">
+                            <div class="col-3">
+                                <span class="bold-text"> Phone number: </span>
+                            </div>
+                            <div class="col-3">
+                                <span *ngIf="!phoneNumberEditModeEnabled" class="text-name"> {{phoneNumber}}</span>
+                                <input class="form-control" *ngIf="phoneNumberEditModeEnabled" [(ngModel)]="phoneNumber" type="text">
+                            </div>
+                            <div class="edit-btn col-2">
+                                <span (click)="changePhoneNumberEditModeEnabled()" class="cursor-pointer text-primary"> {{phoneNumberBtnName}}</span>
+                            </div>
+                        </div>
+                        <!-- <div class="mt-1">
+                                <span class="bold-text"> Name: </span>
+                                <span> David</span>
+                                <span class="cursor-pointer text-primary">Edit</span>
+                            </div> -->
+                        <!-- <div class="mt-1">
+                                <span class="bold-text"> Last Name: </span>
+                                <span> Yahalom</span>
+                                <span class="cursor-pointer text-primary">Edit</span>
+                            </div> -->
+                        <!-- <div class="mt-1">
+                                <span class="bold-text"> Company: </span>
+                                <span> Nayatech</span>
+                                <span class="cursor-pointer text-primary">Edit</span>
+                            </div>
+                            <div class="mt-1">
+                                <span class="bold-text"> Country: </span>
+                                <span> USA</span>
+                                <span class="cursor-pointer text-primary">Edit</span>
+                            </div>
+                            <div class="mt-1">
+                                <span class="bold-text"> City: </span>
+                                <span> New York</span>
+                                <span class="cursor-pointer text-primary">Edit</span>
+                            </div> -->
+                        <!-- <div class="mt-1">
+                                <span class="bold-text"> Email: </span>
+                                <span> test@gmail.com</span>
+                                <span class="cursor-pointer text-primary">Edit</span>
+                            </div>
+                            <div class="mt-1">
+                                <span class="bold-text"> Phone number: </span>
+                                <span> +340685005502</span>
+                                <span class="cursor-pointer text-primary">Edit</span>
+                            </div> -->
+
+                        <div class="forgot-password-div" (click)="recoverPassword()">
+                            <span class="recover text-primary" sty>Forgot password</span>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                <div class="box-container p-2">
+                                    <div class="box-name">Settings</div>
+                                    <div class="box-body mt-2   ">
+                                        <div class="d-flex flex-row">
+                                            <label class="label-with-margin">Change:</label>
+
+                                            <div class="radio ml-3">
+                                                <input id="radio-1" name="radio1" type="radio" [checked]="showMoneyPerCpu">
+                                                <label for="radio-1" (click)="changeState()" class="radio-label">Money per cpu core</label>
+                                            </div>
+                                            <div class="radio ml-2">
+                                                <input id="radio-2" name="radio1" type="radio" [checked]="!showMoneyPerCpu">
+                                                <label for="radio-2" (click)="changeState()" class="radio-label">Core count</label>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="showMoneyPerCpu" class="row">
+                                            <div class="col-6 d-flex align-items-center">
+                                                Money per cpu core:
+                                            </div>
+                                            <div class="col-6">
+                                                <input class="form-control score-edit" type="text">
+                                            </div>
+                                        </div>
+                                        <div *ngIf="showMoneyPerCpu" class="row mt-2">
+                                            <div class="col-12">
+                                                <app-select-dropdown [name]="'Money per cpu core from list:'" [textPlaceholder]="'Select option'" [selectOptions]="moneyPerCpuList"></app-select-dropdown>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="!showMoneyPerCpu" class="row">
+                                            <div class="col-6 d-flex align-items-center">
+                                                Core count:
+                                            </div>
+                                            <div class="col-6">
+                                                <input class="form-control score-edit" type="text">
+                                            </div>
+                                        </div>
+                                        <div *ngIf="!showMoneyPerCpu" class="row mt-2">
+                                            <!-- <div class="col-6 d-flex align-items-center">
+                                                    Score:
+                                                </div> -->
+                                            <div class="col-12">
+                                                <app-select-dropdown [name]="'Core count from list:'" [textPlaceholder]="'Select option'" [selectOptions]="moneyPerCpuList"></app-select-dropdown>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-12">
+                                                <app-select-dropdown [name]="'Select database:'" [textPlaceholder]="'Select option'" [selectOptions]="moneyPerCpuList"></app-select-dropdown>
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <button class="btn btn-primary">Mark as migrated</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <popup>
+                            All your data and account will be deleted. Please confirm you really want to do it.
+                        </popup> -->
+
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- <div class="form-group">
+                    <label for="exampleInputFile" class="bold-text">CSV file input:</label>
+                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                    <small id="fileHelp" class="form-text text-muted">Load your data in .csv format</small>
+                </div> -->
+        </div>
+    </app-window-body>
+</div>
+<!-- <label for="exampleInputFile">Name</label>
+                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                    <small id="fileHelp" class="form-text text-muted">Load your data in .csv format</small> -->

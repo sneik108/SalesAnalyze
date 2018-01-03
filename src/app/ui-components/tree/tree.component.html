@@ -1,0 +1,25 @@
+<!-- <tree-root [nodes]="nodes"></tree-root> -->
+<tree-root #tree [nodes]="nodes" [options]="customTemplateStringOptions">
+  <ng-template #treeNodeTemplate let-node>
+    <span *ngIf="node.data.category">
+        <img *ngIf="node.data.category === 'Cores'" src="../../../assets/images/processor.svg" class="svg-ico">
+        <img *ngIf="node.data.category === 'Memory'" src="../../../assets/images/ram-memory.svg" class="svg-ico">
+        <img *ngIf="node.data.category === 'Predicted Storage'" src="../../../assets/images/servers (1).svg" class="svg-ico">
+        <img *ngIf="node.data.category === 'Number of Replicas'" src="../../../assets/images/servers.svg" class="svg-ico">
+      {{node.data.category}}:
+    </span>
+
+    <span [ngClass]="node.data.category ? 'normal-text' : 'bold-text'">{{ node.data.name }}</span>
+  </ng-template>
+  <ng-template #loadingTemplate>Loading, please hold....</ng-template>
+  <!-- <ng-template #treeNodeWrapperTemplate let-node let-index="index">
+  <div class="node-wrapper">
+    <tree-node-expander [node]="node"></tree-node-expander>
+    <div class="node-content-wrapper"
+      [class.node-content-wrapper-active]="node.data.isActive"
+      [class.node-content-wrapper-focused]="node.isFocused">
+      <tree-node-content [node]="node" [index]="index"></tree-node-content>
+    </div>
+  </div>
+</ng-template> -->
+</tree-root>

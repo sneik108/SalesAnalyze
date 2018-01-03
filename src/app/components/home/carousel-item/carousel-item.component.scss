@@ -1,0 +1,44 @@
+.migration-block {
+  .container-base-migration {
+    width: 7.5rem;
+    height: 7.5rem;
+    border: 1px solid #ccd2ec;
+    border-radius: 5px;
+    background-color: white;
+  }
+  .title {
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 0.85rem;
+  }
+  .icon-migration {
+    width: 55px;
+  }
+  .shadow{
+    width: 45px;
+    left: 37px;
+    position: relative;
+    box-shadow: 0 -1px 10px 2px rgba(0, 0, 0, 0.6)
+  }
+  // .icon-migration::after{
+  //   content: "";
+  //   position: absolute;
+  //   box-shadow: 0 10px 6px 1px;
+  //   width: 55px;
+  //   height: 2px;
+  //   display: block;
+  // }
+  .migration-to-arrow {
+  }
+}
+h6 {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.label-with-margin {
+  margin-right: 7px;
+  margin-left: 0px;
+  display: inline;
+  font-size: 13px;
+}

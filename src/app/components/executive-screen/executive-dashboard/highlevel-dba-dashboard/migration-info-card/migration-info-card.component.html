@@ -1,0 +1,22 @@
+<div class="container-migration-complexity">
+  <div class="body d-flex flex-column align-items-center pt-3 pr-3 pl-3">
+    <div class="server-name bold-text cursor-pointer" (click)='openDetailedDbaDashboard()'>{{migrationInfo.serverName}}</div>
+    <div class="oracle-version bold-text">Oracle {{migrationInfo.oracleVersion}}</div>
+    <img class="icon-database mt-2 cursor-pointer" (click)='openDetailedDbaDashboard()' src="../../../../../../assets/images/1466050955.png">
+    <div class="gauge">
+        <app-gauge [gaugeId]="migrationInfo.serverName" [score]="migrationInfo.score"></app-gauge>
+      <!-- <i-align-justify></i-align-justify> -->
+    </div>
+    <div class="migration-complexity d-flex flex-column align-items-center">
+      <span class="bold-text">Migration Complexity</span>
+      <ul class="mt-1">
+        <li *ngFor="let feature of migrationInfo.features" class="text-line-break-dots">
+          {{feature}}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div (click)='openDetailedDbaDashboard()' class="footer d-flex justify-content-center align-items-center">
+    <i-more-horizontal class="d-flex text-primary"></i-more-horizontal>
+  </div>
+</div>

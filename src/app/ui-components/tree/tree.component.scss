@@ -1,0 +1,218 @@
+@import "../../../scss/colors.scss";
+
+:host /deep/ {
+  .toggle-children {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAOBAMAAAAPuiubAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABtQTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////lO/EMgAAAAd0Uk5TANTYHNzXAUJsx8QAAAABYktHRAiG3pV6AAAACW9GRnMAAAErAAACdgBr10KRAAAACXBIWXMAAAsSAAALEgHS3X78AAAAKElEQVQI12NgVGYAAqYSAyDJ7O4M4phg4wTASbAIRBaJmQRWlwgyDQBjYQkdSc3D+gAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNy0xMS0xM1QwNzoyNzoxMi0wNjowMGyPrLYAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTctMTEtMTNUMDc6Mjc6NTMtMDY6MDA/7xFEAAAAKXRFWHRkYzpmb3JtYXQAYXBwbGljYXRpb24vdm5kLmFkb2JlLnBob3Rvc2hvcOStn1QAAAASdEVYdGxhYmVsAGNoZXZyb24tZG93bn0d3gwAAAAVdEVYdHBob3Rvc2hvcDpDb2xvck1vZGUAM1YCs0AAAAAuelRYdHJkZjpCYWcAAFjD7cehAQAADAKg7hX+f6V5fREa6RV3d3d3d3d3d/evD7JqNk+oXl/6AAAAE3RFWHR0aWZmOlhSZXNvbHV0aW9uADcyDlBxhQAAABN0RVh0dGlmZjpZUmVzb2x1dGlvbgA3MpNfkPMAAAAodEVYdHhtcDpDcmVhdGVEYXRlADIwMTctMTEtMDZUMTk6NDU6MTUrMDI6MDBPfM3KAAAAMXRFWHR4bXA6Q3JlYXRvclRvb2wAQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3Mpq6lDKAAAACp0RVh0eG1wOk1ldGFkYXRhRGF0ZQAyMDE3LTExLTA3VDE0OjUwOjQ0KzAyOjAw51JC9gAAACh0RVh0eG1wOk1vZGlmeURhdGUAMjAxNy0xMS0wN1QxNDo1MDo0NCswMjowMNv2EUgAAABLdEVYdHhtcE1NOkRvY3VtZW50SUQAYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmVjMzY2MGMxLWMzYTgtMTFlNy05YzFlLTllNDRhYjk2Zjc3YyPQ938AAAA9dEVYdHhtcE1NOkluc3RhbmNlSUQAeG1wLmlpZDo5MTdjN2I0ZC1mOTQ1LWZhNGYtYWQxNC0zZmM0OGNlNmFlN2K0WBFZAAAARXRFWHR4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQAeG1wLmRpZDowYjk3Yzk5Ni00NDEwLTc5NGQtOTk1ZS1iYWU2N2I5ZTA0MzBC4XleAAAAAElFTkSuQmCC);
+    height: 15px;
+    padding-top: 10px;
+    padding-left: 10px;
+    // top: 5px;
+    // left: 2px;
+  }
+  // .toggle-children-wrapper{
+  //     padding:2px 3px 5px 10px;
+  // }
+
+  .node-content-wrapper,
+  .tree-children {
+    position: relative;
+  }
+
+  .node-content-wrapper::before,
+  .tree-children::after {
+    content: "";
+    position: absolute;
+  }
+
+  .node-content-wrapper::before {
+    border-bottom: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
+    height: 28px;
+    top: -17px;
+    width: 20px;
+    left: -28px;
+  }
+
+  .tree-node-leaf > .node-wrapper > .node-content-wrapper::before {
+    width: 25px;
+  }
+
+  .tree-children::after {
+    border-left: 1px solid lightgrey;
+    height: 100%;
+    top: -15px;
+    left: -15px;
+  }
+
+  treenode:last-child > .tree-node > .tree-children::after {
+    border-left: none;
+  }
+
+  .toggle-children {
+    z-index: 1;
+  }
+
+  // background: red !important;
+  .tree-node-level-1.tree-node-expanded {
+    .node-wrapper {
+      background-color: $DodgerBlue;
+      color: $White;
+      box-shadow: none;
+    }
+    .node-wrapper{
+      .toggle-children-wrapper-expanded{
+        .toggle-children{
+          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAOCAMAAADKSsaaAAAAAXNSR0IB2cksfwAAAJNQTFRFAAAA29vb5+fnAAAA6+vr+vr63t7efX19U1NT5eXl4eHhjo6OmZmZ3Nzc9fX13d3drKysOjo639/f+Pj44ODgRUVFqamp19fX9/f36urqTU1Nj4+PoKCg6enp9vb22tra19fX+fn51tbW39/fk5OT6OjoGRkZ////yMjI4+Pj29vb/Pz88PDw2tra+Pj47OzsKCgojWbjvAAAADF0Uk5TAPj7HPz/+zMo+/s2Qfr/+koj/P/8JUr5//woO0b8//n6//n6O/wfFGb7+VH9+iL7IErW144AAABhSURBVHicJcxXDoAgEARQLChi713E3vX+p1PZ/ZmXyWQRkmQFwalY00HEwNQEWrbjekA/CKMYmKRZXgBLil1QVTdMIG55J56SntPhhzJmbPpyXla+kb/Zj/D0xfq6+0fgBRu8BbHq7+IcAAAAAElFTkSuQmCC);
+        }
+      }
+    }
+    .tree-node-level-2{
+      .node-wrapper{
+        background-color: $White;
+        color: $Black;
+        box-shadow: none;
+      }
+    }
+    .tree-node-level-2.tree-node-expanded{
+      .node-wrapper{
+        background-color: $White;
+        color: $DodgerBlue;
+        box-shadow: none;
+      }
+      .node-wrapper{
+        .toggle-children-wrapper-expanded{
+          .toggle-children{
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAOCAMAAADKSsaaAAAAAXNSR0IB2cksfwAAALRQTFRFAAAAMavzTLPxAAAAK67zJqr3TLHvcIKLPGuCPK7yKqr3VLbvhI2VmZmZRrDwLKz1T7PvpKuuNEhOR7LvJar3O63yKHWdeKfBK6jyIqr3N6zyTU1NQJrJKqjzRbHxZaLEMa/0I6r2P7DxKIG1K6z1Jqv3VLTsABggLIzALKz1JKr3RbPyipKWGIC4Jqv2OK/yFkhk////fbnaMK30RWd7tt7yLqz0LWuLa7/uKKz2L630I1FolCQamAAAADx0Uk5TAP38HP7//Tk3/f/8OkH9//xMJ/z//UZi/f/9KHf9/Gj+//5T///8IF3+//49Vv/+LhSL/jRl/zlM//4s3JvXEAAAAGRJREFUeJxjYGBkYmaAABZWNnYIi4OTi5sHwuTl4xcQhDCFhEVExSBMcQlJKWkIU0ZWUg7CkldQVAIzlFVU1dRBDA1NLW0dEENXT1LfAEgbGulJGpuAREz1JM3MwaotLK2swQwAaiYHq0D5G9cAAAAASUVORK5CYII=);
+          }
+        }
+      }
+      .tree-node-level-3{
+        .node-wrapper{
+          color: $Black;
+        }
+        .node-wrapper:hover{
+          color: $DodgerBlue;
+        }
+      }
+    }
+  }
+
+  .tree-node-level-1 {
+    .tree-node-expanded {
+    }
+    .node-wrapper {
+      font-weight: 700;
+      padding: 3px;
+      .toggle-children-wrapper {
+        position: relative;
+        top: 3px;
+        left: 5px;
+      }
+      tree-node-content{
+        position: relative;
+        left: 5px;
+      }
+    }
+
+    .node-wrapper:hover {
+      background-color: $DodgerBlue;
+      color: $White;
+      box-shadow: none;
+    }
+    .node-wrapper:hover{
+      .toggle-children-wrapper{
+        .toggle-children{
+          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAOCAMAAADKSsaaAAAAAXNSR0IB2cksfwAAAJNQTFRFAAAA29vb5+fnAAAA6+vr+vr63t7efX19U1NT5eXl4eHhjo6OmZmZ3Nzc9fX13d3drKysOjo639/f+Pj44ODgRUVFqamp19fX9/f36urqTU1Nj4+PoKCg6enp9vb22tra19fX+fn51tbW39/fk5OT6OjoGRkZ////yMjI4+Pj29vb/Pz88PDw2tra+Pj47OzsKCgojWbjvAAAADF0Uk5TAPj7HPz/+zMo+/s2Qfr/+koj/P/8JUr5//woO0b8//n6//n6O/wfFGb7+VH9+iL7IErW144AAABhSURBVHicJcxXDoAgEARQLChi713E3vX+p1PZ/ZmXyWQRkmQFwalY00HEwNQEWrbjekA/CKMYmKRZXgBLil1QVTdMIG55J56SntPhhzJmbPpyXla+kb/Zj/D0xfq6+0fgBRu8BbHq7+IcAAAAAElFTkSuQmCC);
+        }
+      }
+    }
+    .node-content-wrapper::before {
+      left: -22px;
+    }
+    .node-content-wrapper:hover {
+      background: transparent;
+    }
+    .node-content-wrapper::before {
+      display: none;
+    }
+    .tree-node-level-2 {
+      .node-wrapper {
+        padding: 3px 3px 0px 0;
+        .toggle-children-wrapper{
+          left: 0px;
+        }
+        tree-node-expander {
+          position: relative;
+          left: 16px;
+        }
+        tree-node-content {
+          position: relative;
+          left: 16px;
+        }
+      }
+      .node-wrapper:hover{
+        .toggle-children-wrapper{
+          .toggle-children{
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAOCAMAAADKSsaaAAAAAXNSR0IB2cksfwAAALRQTFRFAAAAMavzTLPxAAAAK67zJqr3TLHvcIKLPGuCPK7yKqr3VLbvhI2VmZmZRrDwLKz1T7PvpKuuNEhOR7LvJar3O63yKHWdeKfBK6jyIqr3N6zyTU1NQJrJKqjzRbHxZaLEMa/0I6r2P7DxKIG1K6z1Jqv3VLTsABggLIzALKz1JKr3RbPyipKWGIC4Jqv2OK/yFkhk////fbnaMK30RWd7tt7yLqz0LWuLa7/uKKz2L630I1FolCQamAAAADx0Uk5TAP38HP7//Tk3/f/8OkH9//xMJ/z//UZi/f/9KHf9/Gj+//5T///8IF3+//49Vv/+LhSL/jRl/zlM//4s3JvXEAAAAGRJREFUeJxjYGBkYmaAABZWNnYIi4OTi5sHwuTl4xcQhDCFhEVExSBMcQlJKWkIU0ZWUg7CkldQVAIzlFVU1dRBDA1NLW0dEENXT1LfAEgbGulJGpuAREz1JM3MwaotLK2swQwAaiYHq0D5G9cAAAAASUVORK5CYII=);
+          }
+        }
+      }
+      .node-wrapper:hover {
+        background-color: $White;
+      }
+      .node-wrapper:hover,
+      .node-wrapper:focus,
+      .node-wrapper:active {
+        background-color: $White;
+        color: $DodgerBlue;
+        box-shadow: none;
+      }
+      .node-content-wrapper:hover {
+        box-shadow: none;
+      }
+      .node-content-wrapper::before {
+        display: block;
+      }
+
+      .tree-children {
+        left: 13px;
+      }
+
+      .node-content-wrapper::before {
+        display: none;
+      }
+
+      .tree-node-level-3 {
+        .node-wrapper {
+          padding: 0;
+          font-weight: 400;
+        }
+        .node-content-wrapper {
+          padding: 0;
+        }
+        .node-content-wrapper::before {
+          display: block;
+          border-bottom-color: $DodgerBlue;
+          border-left-color: $DodgerBlue;
+        }
+      }
+    }
+  }
+
+  .tree-children {
+    font-family: "Montserrat";
+    .node-wrapper {
+      .toggle-children-placeholder {
+        // display: none;
+      }
+      // .node-content-wrapper::before {
+      //   border-bottom-color: $DodgerBlue;
+      //   border-left-color: $DodgerBlue;
+      // }
+    }
+  }
+
+  .svg-ico{
+    height:24px;
+  }
+}

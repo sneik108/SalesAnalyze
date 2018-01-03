@@ -1,0 +1,8 @@
+<div class="bold-text title">{{title}}</div>
+<div *ngIf="titleDescription" class="title-description">{{titleDescription}}</div>
+<div [chart]="chart" [ngStyle]="{'height': innerHeight}"  >
+
+</div>
+<div *ngIf="chartType === 'pie'" class="migration-score">
+  Migration Score: <span>{{successScore}}</span>
+</div>

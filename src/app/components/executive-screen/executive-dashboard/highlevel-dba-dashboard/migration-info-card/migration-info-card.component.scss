@@ -1,0 +1,56 @@
+@import '../../../../../../scss/colors.scss';
+
+.container-migration-complexity{
+  border: 1px solid $PeriwinkleGray;
+  border-bottom: none;
+  width: 17rem;
+
+  .body {
+    min-height: 30.6rem;
+    .server-name{
+      font-size: 1rem;
+      // font-weight: 700;
+    }
+
+    .oracle-version {
+      color: $Valencia;
+      font-size: 0.80rem;
+      // font-weight: 700;
+    }
+
+    .icon-database {
+      width: 60px;
+    }
+
+    // .gauge {
+    //   width: 150px;
+    //   height: 200px;
+    // }
+
+    .migration-complexity{
+      position: relative;
+      bottom: 2rem;
+
+      ul{
+        list-style: none;
+        padding: 0 0 0 0.5rem;
+        li:before{
+          content: '✓';
+          font-weight: 700;
+          margin-right: 5px;
+          color: $Atlantis;
+        }
+      }
+    }
+  }
+
+
+  .footer{
+    width: 100%;
+    border-top: 1px solid $PeriwinkleGray;
+    border-bottom: 1px solid $PeriwinkleGray;
+    background-color: $Alabaster;
+    cursor: pointer;
+  }
+}
+

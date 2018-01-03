@@ -1,0 +1,29 @@
+:host /deep/ {
+  .highcharts-container {
+    font-family: "Montserrat"
+  }
+  .color-circle{
+    width: 7px;
+    display: block;
+    position: relative;
+    height: 7px;
+    top: 14px;
+    right: 11px;
+    border-radius: 50%;
+  }
+
+  .name {
+    font-weight: 700;
+    font-size: 0.7rem;
+  }
+
+  .value{
+    font-size: 0.7rem;
+  }
+
+  .legend{
+    position: relative;
+    bottom: 0.5rem;
+  }
+}
+

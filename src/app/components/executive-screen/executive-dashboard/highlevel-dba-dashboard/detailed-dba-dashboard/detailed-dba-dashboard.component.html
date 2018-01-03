@@ -1,0 +1,69 @@
+<div class="container-feature-info container-fluid">
+  <!-- <div class='mt-1'>Features for Migration</div> -->
+  <div class="row" style="margin-top:20px">
+    <div class="col-12">
+      <span class="bold-text">Hostname:</span>
+      <span class="server-value">{{detailedDBAModel.hostName}}</span>
+    </div>
+    <div class="col-12">
+      <span class="bold-text">IP:</span>
+      <span class="server-value">{{detailedDBAModel.ipAddress}}</span>
+    </div>
+    <div class="col-12">
+      <span class="bold-text">Cost for the database:</span>
+      <span class="server-value">{{detailedDBAModel.cost | formatMoney}}</span>
+    </div>
+    <div class="col-12">
+      <span class="bold-text">Oracle version:</span>
+      <span class="server-value">{{detailedDBAModel.oracleVersion}}</span>
+    </div>
+    <div class="col-12">
+      <span class="bold-text">Number of CPUs:</span>
+      <span class="server-value">{{detailedDBAModel.cpuNumber}}</span>
+    </div>
+  </div>
+
+  <h3>Database features</h3>
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <h6>Search by Features</h6>
+      <div class="input-group">
+        <!-- <span class="input-group-addon" id="sizing-addon2">Search</span> -->
+        <input type="text" [(ngModel)]="searchFeature" class="form-control input-search" placeholder="What features are you looking for?"
+          aria-describedby="sizing-addon2">
+        <button class="btn btn-primary" (click)="clearFilter()" type="button">
+          <i class="fa fa-times-circle btn-clear" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mt-2">
+    <app-tree [nodes]="filteredfeatureTreeItems"></app-tree>
+  </div>
+  <div class="col-md-12 div-border mb-5">
+    <h3>Target database sizing</h3>
+    <div class="migration-name bold-text text-primary">
+      <img src="../../../../../../assets/images/amazon-rds.png" style="width: 25px;">
+      <span>Amazon Aurora w/PostgreSQL Compatibility</span>
+    </div>
+    <div class="ml-3"><app-tree [nodes]="migrationCompatibilityItems"></app-tree></div>
+
+    <!-- <h4 class="features-title">Feature Migration Details</h4>
+    <h4>Oracle Inline Views Overview</h4>
+    <p>An Oracle inline view refers to a SELECT statement located in the FROM clause of secondary(or more)
+      statement. Inline views are commonly used to make complex queries easier by removing
+      calculations or eliminating join operations while condensinh several separate into a single simplified
+      query.
+    </p>
+    <h4>Example</h4>
+    <p>Oracle Inline View:</p>
+    <div class="code-block">
+        <p>SELECT A.LAST_NAME, A.SALARY, A.DEPARTMENT_ID, B.SAL_AVG</p>
+        <p class="text">FROM EMPLOYEES A,</p>
+        <p class="text">(</p>
+        <p class="sql-text">SELECT DEPARTMENT_ID, ROUND(AVG(SALARY))</p>
+        <p class="sql-text"> FROM EMPLOYEES</p>
+        <p class="text">)</p>
+    </div> -->
+  </div>
+</div>

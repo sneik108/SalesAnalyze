@@ -1,0 +1,67 @@
+<div class="container-feature-info container-fluid">
+  <!-- <app-pdf-generator></app-pdf-generator> -->
+
+  <span class="view-switch">
+
+  </span>
+  <div class="row mt-2">
+    <div class="col-5">
+      <button class="btn btn-sm btn-warning" (click)="downloadReport()">
+        <i class="fa fa-play-circle"></i>
+        <span>
+          Executive Report
+        </span>
+      </button>
+      <button class="btn btn-sm btn-warning" (click)="openHighLevelDBADasboard()">DBA view</button>
+      <!-- <button (click)="changeView()" class="btn btn-sm btn-def">
+        <i *ngIf="dataView == 'chartsView'" class="fa fa-list"></i>
+        <i *ngIf="dataView == 'tableView'" class="fa fa-bar-chart-o"></i>
+      </button> -->
+    </div>
+    <div class="col-6 container-slider">
+      <!-- cost-reduction -->
+      <!-- <div class="mt-2">
+        <span class="mr-1">Potential License Cost Reduction: </span>
+        <span class="cost-value">${{summaryCostReduction}}</span>
+      </div> -->
+      <app-slider [minValue]="serverMinCost" [maxValue]="serverMaxCost" [step]="10000" (onChangeSliderValueEvent)="filterServers($event)">
+      </app-slider>
+    </div>
+  </div>
+  <div class="operation-divider">
+    <button  *ngIf="showScrollButtons" class="btn-left-scroll z-index-override">
+      <i-arrow-left class="left-scroll" (click)="leftScroll()"></i-arrow-left>
+    </button>
+    <button  *ngIf="showScrollButtons" class="btn-right-scroll z-index-override">
+      <i-arrow-right class="right-scroll z-index-override" (click)="rightScroll()"></i-arrow-right>
+    </button>
+  </div>
+
+
+  <!-- <button class="btn btn-default" (click)="rightScroll()">
+      </button> -->
+  <div *ngIf="dataView == 'chartsView'" id="scrollable" class="chart-view">
+    <app-chart [color]="'DodgerBlue'" [title]="'Recommended Databases For Migration'" [titleDescription]="'(Sorted By migration complexity, low to high)'"
+      [showAllValues]="true" [titlePosition]="'left'" [seriesName]="'Complexity'" [chartItems]="filteredServers" [yAxisName]="'Migration Complexity Score'"
+      [yAxisMax]="100" (onItemSelectEvent)="onChartItemSelect($event)"></app-chart>
+  </div>
+  <!-- <div *ngIf="dataView == 'tableView'" class="dashboard-table">
+    <app-datatable [source]="costsItems" [settings]="mainServersDatatableSettings" (itemWasSelected)="onDatatableItemSelect($event)">
+    </app-datatable>
+  </div> -->
+  <div class="row mb-5">
+    <div class="col-5">
+      <app-chart [color]="'Atlantis'" [title]="'Most Expensive Databases'" [innerHeight]="'250px'" [titlePosition]="'left'" [seriesName]="'Cost'"
+        [chartItems]="mostExpensiveItems" [chartType]="'bar'" [yAxisName]="'Cost, $'" (onItemSelectEvent)="onChartItemSelect($event)"></app-chart>
+    </div>
+    <div class="col-7" style="overflow-y: auto;">
+      <div class="bold-text analyzed-table-name">Analyzed Databases</div>
+      <app-datatable [limit]="5" [source]="mostComplexItems" [showHeader]="true" [settings]="mostComplexServersDatatableSettings"
+        (itemWasSelected)="onDatatableItemSelect($event)">
+      </app-datatable>
+      <!-- <app-chart [color]="'RedOrange'" [title]="'Most Complex Databases'" [seriesName]="'Score'" [yAxisMax]="100" [chartItems]="mostComplexItems"
+        [yAxisName]="'Migration complexity scores'" (onItemSelectEvent)="onChartItemSelect($event)"></app-chart> -->
+    </div>
+  </div>
+
+</div>

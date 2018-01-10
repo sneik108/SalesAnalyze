@@ -14,5 +14,7 @@ namespace SA_Repositories
     Task<T> GetAsync(int entityId);
 
     IEnumerable<T> GetAll();
+
+    IEnumerable<T> GetAll(params string[] includes);
   }
 }

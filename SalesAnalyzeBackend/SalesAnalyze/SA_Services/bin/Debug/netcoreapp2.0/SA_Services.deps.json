@@ -8,8 +8,10 @@
     ".NETCoreApp,Version=v2.0": {
       "SA_Services/1.0.0": {
         "dependencies": {
+          "SA_DTO": "1.0.0",
           "SA_Models": "1.0.0",
-          "SA_Repositories": "1.0.0"
+          "SA_Repositories": "1.0.0",
+          "SA_Utils": "1.0.0"
         },
         "runtime": {
           "SA_Services.dll": {}
@@ -448,6 +450,11 @@
           "SA_DbContext.dll": {}
         }
       },
+      "SA_DTO/1.0.0": {
+        "runtime": {
+          "SA_DTO.dll": {}
+        }
+      },
       "SA_Models/1.0.0": {
         "runtime": {
           "SA_Models.dll": {}
@@ -460,6 +467,11 @@
         },
         "runtime": {
           "SA_Repositories.dll": {}
+        }
+      },
+      "SA_Utils/1.0.0": {
+        "runtime": {
+          "SA_Utils.dll": {}
         }
       }
     }
@@ -839,12 +851,22 @@
       "serviceable": false,
       "sha512": ""
     },
+    "SA_DTO/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "SA_Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "SA_Repositories/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SA_Utils/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

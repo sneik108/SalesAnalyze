@@ -913,6 +913,16 @@
           "bin/placeholder/SA_DbContext.dll": {}
         }
       },
+      "SA_DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/SA_DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SA_DTO.dll": {}
+        }
+      },
       "SA_Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
@@ -3438,6 +3448,11 @@
       "path": "../SA_DbContext/SA_DbContext.csproj",
       "msbuildProject": "../SA_DbContext/SA_DbContext.csproj"
     },
+    "SA_DTO/1.0.0": {
+      "type": "project",
+      "path": "../SA_DTO/SA_DTO.csproj",
+      "msbuildProject": "../SA_DTO/SA_DTO.csproj"
+    },
     "SA_Models/1.0.0": {
       "type": "project",
       "path": "../SA_Models/SA_Models.csproj",
@@ -3457,6 +3472,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.NETCore.App >= 2.0.0",
+      "SA_DTO >= 1.0.0",
       "SA_Models >= 1.0.0",
       "SA_Repositories >= 1.0.0",
       "SA_Utils >= 1.0.0"
@@ -3500,6 +3516,9 @@
           "projectReferences": {
             "C:\\Users\\sneik\\Documents\\GitHub\\SalesAnalyze\\SalesAnalyzeBackend\\SalesAnalyze\\SA_Utils\\SA_Utils.csproj": {
               "projectPath": "C:\\Users\\sneik\\Documents\\GitHub\\SalesAnalyze\\SalesAnalyzeBackend\\SalesAnalyze\\SA_Utils\\SA_Utils.csproj"
+            },
+            "C:\\Users\\sneik\\Documents\\GitHub\\SalesAnalyze\\SalesAnalyzeBackend\\SalesAnalyze\\SA_DTO\\SA_DTO.csproj": {
+              "projectPath": "C:\\Users\\sneik\\Documents\\GitHub\\SalesAnalyze\\SalesAnalyzeBackend\\SalesAnalyze\\SA_DTO\\SA_DTO.csproj"
             },
             "C:\\Users\\sneik\\Documents\\GitHub\\SalesAnalyze\\SalesAnalyzeBackend\\SalesAnalyze\\SA_Repositories\\SA_Repositories.csproj": {
               "projectPath": "C:\\Users\\sneik\\Documents\\GitHub\\SalesAnalyze\\SalesAnalyzeBackend\\SalesAnalyze\\SA_Repositories\\SA_Repositories.csproj"

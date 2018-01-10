@@ -1,0 +1,9 @@
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_DTO\bin\Debug\netcoreapp2.0\SA_DTO.deps.json
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_DTO\bin\Debug\netcoreapp2.0\SA_DTO.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_DTO\bin\Debug\netcoreapp2.0\SA_DTO.pdb
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_DTO\obj\Debug\netcoreapp2.0\SA_DTO.csprojResolveAssemblyReference.cache
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_DTO\obj\Debug\netcoreapp2.0\SA_DTO.csproj.CoreCompileInputs.cache
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_DTO\obj\Debug\netcoreapp2.0\SA_DTO.AssemblyInfoInputs.cache
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_DTO\obj\Debug\netcoreapp2.0\SA_DTO.AssemblyInfo.cs
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_DTO\obj\Debug\netcoreapp2.0\SA_DTO.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_DTO\obj\Debug\netcoreapp2.0\SA_DTO.pdb

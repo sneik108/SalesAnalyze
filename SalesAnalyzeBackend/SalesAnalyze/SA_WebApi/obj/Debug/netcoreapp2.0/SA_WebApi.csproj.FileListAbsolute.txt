@@ -9,3 +9,15 @@ C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA
 C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_WebApi\obj\Debug\netcoreapp2.0\SA_WebApi.AssemblyInfo.cs
 C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_WebApi\obj\Debug\netcoreapp2.0\SA_WebApi.dll
 C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_WebApi\obj\Debug\netcoreapp2.0\SA_WebApi.pdb
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_WebApi\bin\Debug\netcoreapp2.0\SA_DbContext.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_WebApi\bin\Debug\netcoreapp2.0\SA_DTO.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_WebApi\bin\Debug\netcoreapp2.0\SA_Models.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_WebApi\bin\Debug\netcoreapp2.0\SA_Repositories.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_WebApi\bin\Debug\netcoreapp2.0\SA_Services.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_WebApi\bin\Debug\netcoreapp2.0\SA_Utils.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_WebApi\bin\Debug\netcoreapp2.0\SA_Services.pdb
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_WebApi\bin\Debug\netcoreapp2.0\SA_Models.pdb
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_WebApi\bin\Debug\netcoreapp2.0\SA_DbContext.pdb
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_WebApi\bin\Debug\netcoreapp2.0\SA_DTO.pdb
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_WebApi\bin\Debug\netcoreapp2.0\SA_Repositories.pdb
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_WebApi\bin\Debug\netcoreapp2.0\SA_Utils.pdb

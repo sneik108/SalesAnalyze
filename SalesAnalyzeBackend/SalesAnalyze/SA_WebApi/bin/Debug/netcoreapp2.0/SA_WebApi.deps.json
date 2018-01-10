@@ -24,7 +24,8 @@
       "SA_WebApi/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.3",
-          "Microsoft.NETCore.App": "2.0.0"
+          "Microsoft.NETCore.App": "2.0.0",
+          "SA_Services": "1.0.0"
         },
         "runtime": {
           "SA_WebApi.dll": {}
@@ -3794,6 +3795,70 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
+      "SA_DbContext/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.0.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
+          "Microsoft.EntityFrameworkCore.Tools": "2.0.1",
+          "SA_Models": "1.0.0"
+        },
+        "runtime": {
+          "SA_DbContext.dll": {}
+        },
+        "compile": {
+          "SA_DbContext.dll": {}
+        }
+      },
+      "SA_DTO/1.0.0": {
+        "runtime": {
+          "SA_DTO.dll": {}
+        },
+        "compile": {
+          "SA_DTO.dll": {}
+        }
+      },
+      "SA_Models/1.0.0": {
+        "runtime": {
+          "SA_Models.dll": {}
+        },
+        "compile": {
+          "SA_Models.dll": {}
+        }
+      },
+      "SA_Repositories/1.0.0": {
+        "dependencies": {
+          "SA_DbContext": "1.0.0",
+          "SA_Models": "1.0.0"
+        },
+        "runtime": {
+          "SA_Repositories.dll": {}
+        },
+        "compile": {
+          "SA_Repositories.dll": {}
+        }
+      },
+      "SA_Services/1.0.0": {
+        "dependencies": {
+          "SA_DTO": "1.0.0",
+          "SA_Models": "1.0.0",
+          "SA_Repositories": "1.0.0",
+          "SA_Utils": "1.0.0"
+        },
+        "runtime": {
+          "SA_Services.dll": {}
+        },
+        "compile": {
+          "SA_Services.dll": {}
+        }
+      },
+      "SA_Utils/1.0.0": {
+        "runtime": {
+          "SA_Utils.dll": {}
+        },
+        "compile": {
+          "SA_Utils.dll": {}
+        }
+      },
       "Microsoft.NETCore.App/2.0.0": {
         "dependencies": {
           "Microsoft.NETCore.DotNetHostPolicy": "2.0.0",
@@ -5979,6 +6044,36 @@
       "sha512": "sha512-W6ZZ0/o7+3Qb77mRAQyLjPudHG3OMeeQ4p9yY13PUdJArmRCx2cLMm5F4tpIjJXxzHC0ew0oK7DMDGILMdfCnw==",
       "path": "windowsazure.storage/8.1.4",
       "hashPath": "windowsazure.storage.8.1.4.nupkg.sha512"
+    },
+    "SA_DbContext/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SA_DTO/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SA_Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SA_Repositories/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SA_Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SA_Utils/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.NETCore.App/2.0.0": {
       "type": "package",

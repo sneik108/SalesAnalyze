@@ -17,3 +17,7 @@ C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\Co
 C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\ConsoleTestApp\obj\Debug\netcoreapp2.0\ConsoleTestApp.AssemblyInfo.cs
 C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\ConsoleTestApp\obj\Debug\netcoreapp2.0\ConsoleTestApp.dll
 C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\ConsoleTestApp\obj\Debug\netcoreapp2.0\ConsoleTestApp.pdb
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\ConsoleTestApp\bin\Debug\netcoreapp2.0\SA_DTO.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\ConsoleTestApp\bin\Debug\netcoreapp2.0\SA_Utils.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\ConsoleTestApp\bin\Debug\netcoreapp2.0\SA_DTO.pdb
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\ConsoleTestApp\bin\Debug\netcoreapp2.0\SA_Utils.pdb

@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using SA_DbContext;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SA_Repositories
@@ -55,6 +56,25 @@ namespace SA_Repositories
     public IEnumerable<T> GetAll()
     {
       return _dbContext.Set<T>();
+    }
+
+    public IEnumerable<T> GetAll(params string[] includes)
+    {
+      IQueryable<T> result = null;
+      var flagResultFilled = false;
+      foreach (var include in includes)
+      {
+        if (!flagResultFilled)
+        {
+          flagResultFilled = true;
+          result = _dbContext.Set<T>().Include(include);
+        }
+        else
+        {
+          result.Include(include);
+        }
+      }
+      return result.AsEnumerable();
     }
   }
 }

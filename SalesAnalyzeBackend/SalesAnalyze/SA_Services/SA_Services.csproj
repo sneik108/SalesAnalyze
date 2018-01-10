@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SA_DTO\SA_DTO.csproj" />
     <ProjectReference Include="..\SA_Models\SA_Models.csproj" />
     <ProjectReference Include="..\SA_Repositories\SA_Repositories.csproj" />
     <ProjectReference Include="..\SA_Utils\SA_Utils.csproj" />

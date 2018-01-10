@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using SA_DTO;
 using SA_Services;
 
 namespace SA_WebApi.Controllers
@@ -53,6 +55,22 @@ namespace SA_WebApi.Controllers
     public int TransactionsPerDay() => _salesService.TransactionsPerDay();
 
     #endregion Sales
+
+    #region TopCustomers
+    [HttpGet("customers/topByProductQuantity/{count}")]
+    public IEnumerable<TopCustomerModel> TopByProductQuantity(int count)
+    {
+      return _customerService.TopByProductQuantity(count);
+    }
+
+    [HttpGet("customers/topBySum/{count}")]
+    public IEnumerable<TopCustomerModel> TopBySum(int count)
+    {
+      return _customerService.TopBySum(count);
+    }
+
+    #endregion
+
 
     // POST api/values
     [HttpPost]

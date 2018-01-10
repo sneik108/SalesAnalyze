@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20180108115712_Add customers details.cs" />
+    <Compile Remove="Migrations\20180108115833_Add customers details.cs" />
+    <Compile Remove="Migrations\20180108115931_Add customers details.cs" />
+    <Compile Remove="Migrations\20180108120855_Adding customer details.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SA_Models\SA_Models.csproj" />
+  </ItemGroup>
+
+</Project>

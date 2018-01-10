@@ -1,30 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import {NgxCarousel} from 'ngx-carousel';
-
+import { IChartItem } from '../../interfaces/IChartItem';
+import { forEach } from '@angular/router/src/utils/collection';
+import {GuidGeneratorService} from '../../services/guid-generator.service';
+ 
 @Component({
   selector: 'app-analyze',
   templateUrl: './analyze.component.html',
-  styleUrls: ['./analyze.component.scss']
+  styleUrls: ['./analyze.component.scss'],
+  providers: [GuidGeneratorService]
 })
 export class AnalyzeComponent implements OnInit {
 
   carouselOne: NgxCarousel;
+  salesByPeriodItems: IChartItem[] = [];
 
-  constructor() { }
+  constructor(private _helper: GuidGeneratorService) { }
 
   ngOnInit() {
-    this.carouselOne = {
-      grid: {xs: 1, sm: 1, md: 1, lg: 1, all: 0},
-      slide: 1,
-      speed: 400,
-      point: {
-        visible: true
-      },
-      load: 2,
-      touch: true,
-      loop: true,
-      custom: 'banner'
-    };
+    this.fillSalesByPeriodItems();
   }
 
   public myfunc(event: Event) {
@@ -32,5 +26,9 @@ export class AnalyzeComponent implements OnInit {
     // it is helps to load the data by parts to increase the performance of the app
     // must use feature to all carousel
  }
-
+ private fillSalesByPeriodItems(){
+   for(let i = 0; i < 10; i++) {
+     this.salesByPeriodItems.push({name: 'Test' + i, value: Math.round(Math.random() * (i + 1))});
+   }    
+ }
 }

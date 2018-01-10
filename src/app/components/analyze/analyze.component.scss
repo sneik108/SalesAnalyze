@@ -14,3 +14,24 @@
   display: flex;
   height: 100%;
 }
+
+.block-common-info{
+  border: 1px solid $Mercury;
+  padding: 0.5rem;
+  .header{
+    font-size: 1.3rem;
+    color: $DodgerBlue;
+    margin-bottom: 0.5rem;
+  }
+  .body{
+
+    .title{
+      font-size: 0.6rem;
+      font-weight: bold;
+    }
+    .value{
+      font-size: 1.2rem;
+      color: $DodgerBlue;
+    }
+  }
+}

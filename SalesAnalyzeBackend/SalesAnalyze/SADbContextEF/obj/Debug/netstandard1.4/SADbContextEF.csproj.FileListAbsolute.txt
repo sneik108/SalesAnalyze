@@ -1,0 +1,7 @@
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SADbContextEF\bin\Debug\netstandard1.4\SADbContextEF.deps.json
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SADbContextEF\bin\Debug\netstandard1.4\SADbContextEF.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SADbContextEF\bin\Debug\netstandard1.4\SADbContextEF.pdb
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SADbContextEF\obj\Debug\netstandard1.4\SADbContextEF.csprojResolveAssemblyReference.cache
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SADbContextEF\obj\Debug\netstandard1.4\SADbContextEF.AssemblyInfo.cs
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SADbContextEF\obj\Debug\netstandard1.4\SADbContextEF.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SADbContextEF\obj\Debug\netstandard1.4\SADbContextEF.pdb

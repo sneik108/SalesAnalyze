@@ -1,6 +1,90 @@
 <div class="container-window">
     <app-window-body [name]="'Analyze'" (deleteMeEvent)="destroyBody()" [innerWidth]="'1000px'">
         <div class="container-feature-info">
+            <!-- div.row>div.col-6*4>div.block-common-info>div.header+div.body>div.row>div.col-6*4>div.title+div.value -->
+            <div class="row">
+                <div class="col-4">
+                    <div class="block-common-info">
+                        <div class="header">Customers</div>
+                        <div class="body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="title">Count</div>
+                                    <div class="value">255</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="title">Avg Sales Points</div>
+                                    <div class="value">10</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="title">Avg product count</div>
+                                    <div class="value">5</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="title">Avg sum on customer</div>
+                                    <div class="value">20$</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer"></div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="block-common-info">
+                        <div class="header">Sales indicators</div>
+                        <div class="body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="title">Quantity</div>
+                                    <div class="value">10000</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="title">Sum</div>
+                                    <div class="value">200$</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="title">Test</div>
+                                    <div class="value">202</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="title">Test</div>
+                                    <div class="value">300</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="block-common-info">
+                        <div class="header">Test</div>
+                        <div class="body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="title">Test 1</div>
+                                    <div class="value">50</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="title">Test 2</div>
+                                    <div class="value">50</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="title">Test 3</div>
+                                    <div class="value">50</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="title">Test 4</div>
+                                    <div class="value">200</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3 block-common-info">
+                <app-chart [chartType]="'line'" [color]="'DodgerBlue'" [title]="'Sale for the period'" [showAllValues]="true" [seriesName]="'Conventional units'"
+                    [graphHeight]="'200px'" [chartItems]="salesByPeriodItems" [yAxisName]="'Sum'"></app-chart>
+            </div>
         </div>
     </app-window-body>
 </div>

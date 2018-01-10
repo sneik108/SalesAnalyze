@@ -26,6 +26,9 @@ export class ChartComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() yAxisMax;
   @Input() titlePosition = 'center';
   @Input() showAllValues = false;
+  @Input() graphHeight: string;
+
+  //TODO delete in future
   @Input() innerHeight: string;
 
   chart: Chart;
@@ -75,7 +78,6 @@ export class ChartComponent implements OnInit, AfterViewInit, OnChanges {
     let maxZoom;
     let columnWidth;
     let graphWidth;
-    let graphHeight;
 
     if (_this.chartType === 'pie') {
       showLegend = true;
@@ -85,26 +87,26 @@ export class ChartComponent implements OnInit, AfterViewInit, OnChanges {
       }
     } else {
       items = values;
-      if (_this.title === 'Recommended Databases For Migration') {
-        const serverNumber = items.length;
-        if (serverNumber < 11) {
-          graphWidth = 800;
-          graphHeight = 200;
-        }
-        else {
-          const widthCoefficient = serverNumber * 1.52;
-          maxZoom = 1;
-          columnWidth = 50;
-          graphWidth = columnWidth * widthCoefficient;
-          graphHeight = 200;
-        }
-      }
+      // if (_this.title === 'Recommended Databases For Migration') {
+      //   const serverNumber = items.length;
+      //   if (serverNumber < 11) {
+      //     graphWidth = 800;
+      //     graphHeight = 200;
+      //   }
+      //   else {
+      //     const widthCoefficient = serverNumber * 1.52;
+      //     maxZoom = 1;
+      //     columnWidth = 50;  
+      //     graphWidth = columnWidth * widthCoefficient;
+      //     graphHeight = 200;
+      //   }
+      // }
     }
     this.chart = new Chart({
       chart: {
         type: this.chartType,
         width: graphWidth,
-        height: graphHeight,
+        height: _this.graphHeight,
       },
       legend: {
         enabled: showLegend

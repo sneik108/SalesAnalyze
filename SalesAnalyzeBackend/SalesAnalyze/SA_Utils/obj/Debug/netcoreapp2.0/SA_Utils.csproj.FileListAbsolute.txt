@@ -1,0 +1,9 @@
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Utils\bin\Debug\netcoreapp2.0\SA_Utils.deps.json
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Utils\bin\Debug\netcoreapp2.0\SA_Utils.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Utils\bin\Debug\netcoreapp2.0\SA_Utils.pdb
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Utils\obj\Debug\netcoreapp2.0\SA_Utils.csprojResolveAssemblyReference.cache
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Utils\obj\Debug\netcoreapp2.0\SA_Utils.csproj.CoreCompileInputs.cache
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Utils\obj\Debug\netcoreapp2.0\SA_Utils.AssemblyInfoInputs.cache
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Utils\obj\Debug\netcoreapp2.0\SA_Utils.AssemblyInfo.cs
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Utils\obj\Debug\netcoreapp2.0\SA_Utils.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Utils\obj\Debug\netcoreapp2.0\SA_Utils.pdb

@@ -1,0 +1,15 @@
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Services\bin\Debug\netcoreapp2.0\SA_Services.deps.json
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Services\bin\Debug\netcoreapp2.0\SA_Services.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Services\bin\Debug\netcoreapp2.0\SA_Services.pdb
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Services\bin\Debug\netcoreapp2.0\SA_Models.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Services\bin\Debug\netcoreapp2.0\SA_Models.pdb
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Services\obj\Debug\netcoreapp2.0\SA_Services.csprojResolveAssemblyReference.cache
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Services\obj\Debug\netcoreapp2.0\SA_Services.csproj.CoreCompileInputs.cache
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Services\obj\Debug\netcoreapp2.0\SA_Services.AssemblyInfoInputs.cache
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Services\obj\Debug\netcoreapp2.0\SA_Services.AssemblyInfo.cs
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Services\obj\Debug\netcoreapp2.0\SA_Services.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Services\obj\Debug\netcoreapp2.0\SA_Services.pdb
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Services\bin\Debug\netcoreapp2.0\SA_DbContext.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Services\bin\Debug\netcoreapp2.0\SA_Repositories.dll
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Services\bin\Debug\netcoreapp2.0\SA_Repositories.pdb
+C:\Users\sneik\Documents\GitHub\SalesAnalyze\SalesAnalyzeBackend\SalesAnalyze\SA_Services\bin\Debug\netcoreapp2.0\SA_DbContext.pdb

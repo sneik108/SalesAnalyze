@@ -75,6 +75,9 @@ namespace SA_WebApi.Controllers
       return _customerService.TopByProductQuantity(count);
     }
 
+    [HttpGet("customers/topBySum/{count}")]
+    public IEnumerable<TopCustomerModel> TopBySum(int count) => _customerService.TopBySum(count);
+
     [HttpGet("customers/topBySalesPoints/{count}")]
     public IEnumerable<TopCustomerModel> TopBySalesPoints(int count)
     {

@@ -10,19 +10,19 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="title">Count</div>
-                                    <div class="value">255</div>
+                                    <div class="value">{{customersCount}}</div>
                                 </div>
                                 <div class="col-6">
                                     <div class="title">Avg Sales Points</div>
-                                    <div class="value">10</div>
+                                    <div class="value">{{avgSalePointsOnCustomer}}</div>
                                 </div>
                                 <div class="col-6">
                                     <div class="title">Avg product count</div>
-                                    <div class="value">5</div>
+                                    <div class="value">{{avgProductCountOnCustomer}}</div>
                                 </div>
                                 <div class="col-6">
                                     <div class="title">Avg sum on customer</div>
-                                    <div class="value">20$</div>
+                                    <div class="value">{{avgSumOnCustomer}}</div>
                                 </div>
                             </div>
                         </div>
@@ -36,19 +36,19 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="title">Quantity</div>
-                                    <div class="value">10000</div>
+                                    <div class="value">{{soldProductsQuantity}}</div>
                                 </div>
                                 <div class="col-6">
                                     <div class="title">Sum</div>
-                                    <div class="value">200$</div>
+                                    <div class="value">{{soldProductsSum}}</div>
                                 </div>
                                 <div class="col-6">
                                     <div class="title">Average Price</div>
-                                    <div class="value">202</div>
+                                    <div class="value">{{avgPrice}}</div>
                                 </div>
                                 <div class="col-6">
                                     <div class="title">Transactions Per Day</div>
-                                    <div class="value">300</div>
+                                    <div class="value">{{transactionsPerDay}}</div>
                                 </div>
                             </div>
                         </div>
@@ -61,45 +61,50 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="title">Sum</div>
-                                    <div class="value">50</div>
+                                    <div class="value font-size-0-8">{{topBySum}}</div>
                                 </div>
                                 <div class="col-6">
                                     <div class="title">Quantity</div>
-                                    <div class="value">50</div>
+                                    <div class="value font-size-0-8">{{topByProductQuantity}}</div>
                                 </div>
                                 <div class="col-6">
                                     <div class="title">Sales Points</div>
-                                    <div class="value">50</div>
+                                    <div class="value font-size-0-8">{{topBySalesPoints}}</div>
                                 </div>
                                 <div class="col-6">
                                     <div class="title">Variety of products</div>
-                                    <div class="value">200</div>
+                                    <div class="value font-size-0-8">{{topByProductsVariety}}</div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
             <div class="mt-3 block-common-info">
                 <app-chart [chartType]="'line'" [color]="'DodgerBlue'" [title]="'Sale for the period'" [showAllValues]="true" [seriesName]="'Conventional units'"
-                    [graphHeight]="'200px'" [chartItems]="salesByPeriodItems" [yAxisName]="'Sum'"></app-chart>
+                    [graphHeight]="'200px'" [chartItems]="allSalesForYear" [yAxisName]="'Sum'"></app-chart>
             </div>
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col">
-                    <div class="mt-3 block-common-info">
-                        <app-chart [chartType]="'pie'" [graphHeight]="'300px'" [chartItems]="salesByPeriodItems" 
+                    <div class="block-common-info">
+                        <app-chart [chartType]="'pie'" [graphHeight]="'300px'" 
+                        [chartItems]="salesByPeriodItems" 
                         [title]="'Sales by sale channels'"></app-chart>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="mt-3 block-common-info">
-                        <app-chart [chartType]="'bar'" [graphHeight]="'300px'" [chartItems]="salesByPeriodItems" 
-                        [title]="'Sales by sale channels'" [yAxisName]="'Sum, $'"></app-chart>
+                    <div class="block-common-info">
+                        <app-chart [chartType]="'bar'" [graphHeight]="'300px'" 
+                            [chartItems]="salesByPeriodItems" [title]="'Top 10 customers'"
+                            [yAxisName]="'Sum, $'"></app-chart>
                     </div>
                 </div>
             </div>
-            
+            <div class="mt-3 block-common-info">
+                <app-datatable [source]="salesByPeriodItems" [showHeader]="true" [settings]="mostComplexServersDatatableSettings"
+                    (itemWasSelected)="onDatatableItemSelect($event)">
+                </app-datatable>
+            </div>
         </div>
     </app-window-body>
 </div>

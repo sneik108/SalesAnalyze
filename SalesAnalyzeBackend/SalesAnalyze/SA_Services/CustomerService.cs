@@ -80,13 +80,16 @@ namespace SA_Services
     {
       CheckArgumentsForTop(count);
 
-      var customers = _unitOfWork.Customers.GetAll(typeof(CustomerDetails).Name);
+      var customers = _unitOfWork.Customers.GetAll(
+        typeof(CustomerDetails).Name);
 
       return (from customer in customers
+              join salePoint in _unitOfWork.SalePoints.GetAll() on customer.Id equals salePoint.Id
+              group customer by GetFullName(customer.CustomerDetails) into g
               select new TopCustomerModel()
               {
-                Name = GetFullName(customer.CustomerDetails),
-                Value = customer.SalePoints.Count
+                Name = g.Key,
+                Value = g.Count()
               })
         .OrderByDescending(c => c.Value)
         .Take(count);

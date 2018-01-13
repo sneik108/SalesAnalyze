@@ -1,34 +1,118 @@
 import { Component, OnInit } from '@angular/core';
-import {NgxCarousel} from 'ngx-carousel';
+import { NgxCarousel } from 'ngx-carousel';
 import { IChartItem } from '../../interfaces/IChartItem';
 import { forEach } from '@angular/router/src/utils/collection';
-import {GuidGeneratorService} from '../../services/guid-generator.service';
- 
+import { GuidGeneratorService } from '../../services/guid-generator.service';
+import { SourceService } from '../../services/source.service';
+
 @Component({
   selector: 'app-analyze',
   templateUrl: './analyze.component.html',
   styleUrls: ['./analyze.component.scss'],
-  providers: [GuidGeneratorService]
+  providers: [GuidGeneratorService, SourceService]
 })
 export class AnalyzeComponent implements OnInit {
 
   carouselOne: NgxCarousel;
   salesByPeriodItems: IChartItem[] = [];
 
-  constructor(private _helper: GuidGeneratorService) { }
+  //customers block
+  customersCount: string;
+  avgSalePointsOnCustomer: string;
+  avgProductCountOnCustomer: string;
+  avgSumOnCustomer: string;
+  //top customers block
+  topByProductQuantity: string;
+  topBySum: string;
+  topBySalesPoints: string;
+  topByProductsVariety: string;
+  //sales block
+  soldProductsQuantity: string;
+  soldProductsSum: string;
+  avgPrice: string;
+  transactionsPerDay: string;
+  //charts
+  allSalesForYear: IChartItem[];
+
+  constructor(private _helper: GuidGeneratorService, private _source: SourceService) { }
 
   ngOnInit() {
-    this.fillSalesByPeriodItems();
+    const vm = this;
+    // vm.fillSalesByPeriodItems();
+    vm.fillCustomersBlock();
+    vm.fillSalesBlock();
+    vm.fillTopCustomersBlock();
+    vm.fillChartWithSalesByMonth();
+
   }
 
   public myfunc(event: Event) {
     // carouselLoad will trigger this funnction when your load value reaches
     // it is helps to load the data by parts to increase the performance of the app
     // must use feature to all carousel
- }
- private fillSalesByPeriodItems(){
-   for(let i = 0; i < 10; i++) {
-     this.salesByPeriodItems.push({name: 'Test' + i, value: Math.round(Math.random() * (i + 1))});
-   }    
- }
+  }
+
+  private fillCustomersBlock() {
+    const vm= this;
+    vm._source.customersCount().subscribe(resp => {
+      vm.customersCount = resp.json();
+    });
+    vm._source.avgSalePointsOnCustomer().subscribe(resp => {
+      vm.avgSalePointsOnCustomer = resp.json();
+    });
+    vm._source.avgProductCountOnCustomer().subscribe(resp => {
+      vm.avgProductCountOnCustomer = resp.json();
+    });
+    vm._source.avgSumOnCustomer().subscribe(resp => {
+      vm.avgSumOnCustomer = resp.json();
+    });
+  }
+
+  private fillSalesBlock() {
+    const vm = this;
+    vm._source.soldProductsQuantity().subscribe(resp => {
+      vm.soldProductsQuantity = resp.json();
+    });
+    vm._source.soldProductsSum().subscribe(resp => {
+      vm.soldProductsSum = resp.json();
+    });
+    vm._source.avgPrice().subscribe(resp => {
+      vm.avgPrice = resp.json();
+    });
+    vm._source.transactionsPerDay().subscribe(resp => {
+      vm.transactionsPerDay = resp.json();
+    });
+  }
+
+  private fillTopCustomersBlock(){
+    const vm = this;
+    const count = 1;
+
+    vm._source.topByProductQuantity(count).subscribe(resp => {
+      vm.topByProductQuantity = resp.json()[0].name;
+    });
+    vm._source.topBySum(count).subscribe(resp => {
+      vm.topBySum = resp.json()[0].name;
+    });
+    vm._source.topBySalesPoints(count).subscribe(resp => {
+      vm.topBySalesPoints = resp.json()[0].name;
+    });
+    vm._source.topByProductsVariety(count).subscribe(resp => {
+      vm.topByProductsVariety = resp.json()[0].name;
+    });
+  }
+
+  private fillChartWithSalesByMonth(){
+    const vm = this;
+    const year = 2017;
+    vm._source.allSalesForYear(year).subscribe(resp => {
+      vm.allSalesForYear = resp.json();
+    });
+  }
+
+  private fillSalesByPeriodItems() {
+    for (let i = 0; i < 10; i++) {
+      this.salesByPeriodItems.push({ name: 'Test' + i, value: Math.round(Math.random() * (i + 1)) });
+    }
+  }
 }

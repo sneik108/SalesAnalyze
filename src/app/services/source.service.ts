@@ -72,7 +72,11 @@ export class SourceService {
   }
 
   allSalesForYear(year: number) {
-    return this.http.get(this.pathToApi + 'sales/allSalesForYear' + year.toString(), this.options);
+    return this.http.get(this.pathToApi + 'sales/allSalesForYear/' + year.toString(), this.options);
+  }
+
+  salesBySaleChannels() {
+    return this.http.get(this.pathToApi + 'sales/salesBySaleChannels/', this.options);
   }
 
 }

@@ -35,6 +35,7 @@ namespace SA_Services
       var salesByMonth = from sale in sales
                          join price in _unitOfWork.Prices.GetAll() on sale.ProductId equals price.ProductId
                          join customer in customers on sale.SalePoint.CustomerId equals customer.Id
+                         orderby sale.Date
                          select new
                          {
                            Name = GetFullName(customer.CustomerDetails),

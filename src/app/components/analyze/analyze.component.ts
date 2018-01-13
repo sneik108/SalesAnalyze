@@ -4,6 +4,7 @@ import { IChartItem } from '../../interfaces/IChartItem';
 import { forEach } from '@angular/router/src/utils/collection';
 import { GuidGeneratorService } from '../../services/guid-generator.service';
 import { SourceService } from '../../services/source.service';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-analyze',
@@ -24,6 +25,7 @@ export class AnalyzeComponent implements OnInit {
   //top customers block
   topByProductQuantity: string;
   topBySum: string;
+  top10BySum: string;
   topBySalesPoints: string;
   topByProductsVariety: string;
   //sales block
@@ -33,6 +35,7 @@ export class AnalyzeComponent implements OnInit {
   transactionsPerDay: string;
   //charts
   allSalesForYear: IChartItem[];
+  salesBySaleChannels: IChartItem[];
 
   constructor(private _helper: GuidGeneratorService, private _source: SourceService) { }
 
@@ -43,7 +46,8 @@ export class AnalyzeComponent implements OnInit {
     vm.fillSalesBlock();
     vm.fillTopCustomersBlock();
     vm.fillChartWithSalesByMonth();
-
+    vm.fillChartWithSalesByChannels();
+    vm.fillTop10CustomersBySum();
   }
 
   public myfunc(event: Event) {
@@ -102,11 +106,26 @@ export class AnalyzeComponent implements OnInit {
     });
   }
 
+  private fillTop10CustomersBySum(){
+    const vm = this;
+    const count = 10;
+    vm._source.topBySum(count).subscribe(resp => {
+      vm.top10BySum = resp.json();
+    });
+  }
+
   private fillChartWithSalesByMonth(){
     const vm = this;
     const year = 2017;
     vm._source.allSalesForYear(year).subscribe(resp => {
       vm.allSalesForYear = resp.json();
+    });
+  }
+
+  private fillChartWithSalesByChannels(){
+    const vm = this;
+    vm._source.salesBySaleChannels().subscribe(resp => {
+      vm.salesBySaleChannels = resp.json();
     });
   }
 

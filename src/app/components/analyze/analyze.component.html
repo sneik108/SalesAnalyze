@@ -88,14 +88,14 @@
                 <div class="col">
                     <div class="block-common-info">
                         <app-chart [chartType]="'pie'" [graphHeight]="'300px'" 
-                        [chartItems]="salesByPeriodItems" 
+                        [chartItems]="salesBySaleChannels" 
                         [title]="'Sales by sale channels'"></app-chart>
                     </div>
                 </div>
                 <div class="col">
                     <div class="block-common-info">
                         <app-chart [chartType]="'bar'" [graphHeight]="'300px'" 
-                            [chartItems]="salesByPeriodItems" [title]="'Top 10 customers'"
+                            [chartItems]="top10BySum" [title]="'Top 10 customers'"
                             [yAxisName]="'Sum, $'"></app-chart>
                     </div>
                 </div>

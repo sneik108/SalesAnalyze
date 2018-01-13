@@ -74,8 +74,44 @@ namespace SA_Services
               select new TopCustomerModel() { Name = GetFullName(customer.CustomerDetails), Value = price.Value * sale.Count })
               .OrderByDescending(c => c.Value)
               .Take(count);
-
     }
+
+    public IEnumerable<TopCustomerModel> TopBySalesPoints(int count)
+    {
+      CheckArgumentsForTop(count);
+
+      var customers = _unitOfWork.Customers.GetAll(typeof(CustomerDetails).Name);
+
+      return (from customer in customers
+              select new TopCustomerModel()
+              {
+                Name = GetFullName(customer.CustomerDetails),
+                Value = customer.SalePoints.Count
+              })
+        .OrderByDescending(c => c.Value)
+        .Take(count);
+    }
+
+    public IEnumerable<TopCustomerModel> TopByProductsVariety(int count)
+    {
+      CheckArgumentsForTop(count);
+
+      var customers = _unitOfWork.Customers.GetAll(typeof(CustomerDetails).Name);
+      var sales = _unitOfWork.Sales.GetAll(typeof(SalePoint).Name);
+
+      return (from sale in sales
+              join customer in customers on sale.SalePoint.CustomerId equals customer.Id
+              group sale by GetFullName(customer.CustomerDetails) into g
+              select new TopCustomerModel()
+              {
+                Name = g.Key,
+                Value = g.Count()
+              })
+        .OrderByDescending(c => c.Value)
+        .Take(count);
+    }
+
+    #region Private methods
 
     private string GetFullName(CustomerDetails customerDetails)
     {
@@ -96,6 +132,6 @@ namespace SA_Services
         throw new ArgumentOutOfRangeException();
       }
     }
-
+    #endregion
   }
 }

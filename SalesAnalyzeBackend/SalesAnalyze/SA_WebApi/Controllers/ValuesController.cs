@@ -13,6 +13,7 @@ namespace SA_WebApi.Controllers
     public ValuesController()
     {
       _customerService = new CustomerService();
+      _salesService = new SalesService();
     }
     // GET api/values
     //[HttpGet]
@@ -40,6 +41,8 @@ namespace SA_WebApi.Controllers
     [HttpGet("customers/avgSumOnCustomer")]
     public int AvgSumOnCustomer() => _customerService.AvgSumOnCustomer();
 
+    
+
     #region Sales
 
     [HttpGet("sales/soldProductsQuantity")]
@@ -54,6 +57,15 @@ namespace SA_WebApi.Controllers
     [HttpGet("sales/transactionsPerDay")]
     public int TransactionsPerDay() => _salesService.TransactionsPerDay();
 
+    [HttpGet("sales/allSalesForYear/{year}")]
+    public IEnumerable<SimpleChartModel> AllSalesForYear(int year) => _salesService.AllSalesForYear(year);
+
+    [HttpGet("sales/salesBySaleChannels")]
+    public IEnumerable<SimpleChartModel> SalesBySaleChannels() => _salesService.SalesBySaleChannels();
+
+    [HttpGet("sales/salesInfoByCustomer")]
+    public IEnumerable<SaleInfoByCustomerModel> SalesInfoByCustomer() => _salesService.SalesInfoByCustomer();
+
     #endregion Sales
 
     #region TopCustomers
@@ -63,11 +75,23 @@ namespace SA_WebApi.Controllers
       return _customerService.TopByProductQuantity(count);
     }
 
-    [HttpGet("customers/topBySum/{count}")]
-    public IEnumerable<TopCustomerModel> TopBySum(int count)
+    [HttpGet("customers/topBySalesPoints/{count}")]
+    public IEnumerable<TopCustomerModel> TopBySalesPoints(int count)
     {
-      return _customerService.TopBySum(count);
+      return _customerService.TopBySalesPoints(count);
     }
+
+    [HttpGet("customers/topByProductsVariety/{count}")]
+    public IEnumerable<TopCustomerModel> TopByProductsVariety(int count)
+    {
+      return _customerService.TopByProductsVariety(count);
+    }
+
+    #endregion
+
+    #region ChartsApi
+
+
 
     #endregion
 

@@ -43,11 +43,11 @@
                                     <div class="value">200$</div>
                                 </div>
                                 <div class="col-6">
-                                    <div class="title">Test</div>
+                                    <div class="title">Average Price</div>
                                     <div class="value">202</div>
                                 </div>
                                 <div class="col-6">
-                                    <div class="title">Test</div>
+                                    <div class="title">Transactions Per Day</div>
                                     <div class="value">300</div>
                                 </div>
                             </div>
@@ -56,23 +56,23 @@
                 </div>
                 <div class="col-4">
                     <div class="block-common-info">
-                        <div class="header">Test</div>
+                        <div class="header">Top customers by</div>
                         <div class="body">
                             <div class="row">
                                 <div class="col-6">
-                                    <div class="title">Test 1</div>
+                                    <div class="title">Sum</div>
                                     <div class="value">50</div>
                                 </div>
                                 <div class="col-6">
-                                    <div class="title">Test 2</div>
+                                    <div class="title">Quantity</div>
                                     <div class="value">50</div>
                                 </div>
                                 <div class="col-6">
-                                    <div class="title">Test 3</div>
+                                    <div class="title">Sales Points</div>
                                     <div class="value">50</div>
                                 </div>
                                 <div class="col-6">
-                                    <div class="title">Test 4</div>
+                                    <div class="title">Variety of products</div>
                                     <div class="value">200</div>
                                 </div>
                             </div>
@@ -85,6 +85,21 @@
                 <app-chart [chartType]="'line'" [color]="'DodgerBlue'" [title]="'Sale for the period'" [showAllValues]="true" [seriesName]="'Conventional units'"
                     [graphHeight]="'200px'" [chartItems]="salesByPeriodItems" [yAxisName]="'Sum'"></app-chart>
             </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mt-3 block-common-info">
+                        <app-chart [chartType]="'pie'" [graphHeight]="'300px'" [chartItems]="salesByPeriodItems" 
+                        [title]="'Sales by sale channels'"></app-chart>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mt-3 block-common-info">
+                        <app-chart [chartType]="'bar'" [graphHeight]="'300px'" [chartItems]="salesByPeriodItems" 
+                        [title]="'Sales by sale channels'" [yAxisName]="'Sum, $'"></app-chart>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </app-window-body>
 </div>

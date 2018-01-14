@@ -79,4 +79,8 @@ export class SourceService {
     return this.http.get(this.pathToApi + 'sales/salesBySaleChannels/', this.options);
   }
 
+  salesInfoByCustomer() {
+    return this.http.get(this.pathToApi + 'sales/salesInfoByCustomer/', this.options);
+  }
+
 }

@@ -45,7 +45,7 @@ import { TreeModule } from 'angular-tree-component';
 import { TreeComponent } from './ui-components/tree/tree.component';
 import { SliderComponent } from './ui-components/slider/slider.component';
 import { PdfGeneratorComponent } from './ui-components/pdf-generator/pdf-generator.component';
-import { AnalyzeComponent } from './components/analyze/analyze.component';
+import { AnalyzeComponent } from './components/analyze-parent/analyze/analyze.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormatMoneyPipe } from './pipes/format-money.pipe';
 import { ScanComponent } from './components/scan/scan.component';
@@ -57,6 +57,8 @@ import { PasswordRecoveryComponent } from './components/password-recovery/passwo
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import {LoadDataComponent} from './components/load-data/load-data.component';
 import { ServicesComponent } from './components/services/services.component';
+import { AnalyzeParentComponent } from './components/analyze-parent/analyze-parent.component';
+import { SearchComponent } from './components/analyze-parent/search/search.component';
 // import {PopupModule} from 'ng2-opd-popup';
 
 @NgModule({
@@ -97,7 +99,9 @@ import { ServicesComponent } from './components/services/services.component';
     PasswordRecoveryComponent,
     UserProfileComponent,
     LoadDataComponent,
-    ServicesComponent
+    ServicesComponent,
+    AnalyzeParentComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

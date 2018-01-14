@@ -1,11 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
-using System.Linq;
 using SA_DTO;
 using SA_Models;
 using SA_Utils;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SA_Services
 {
@@ -66,7 +63,7 @@ namespace SA_Services
     public IEnumerable<SaleInfoByCustomerModel> SalesInfoByCustomer()
     {
       return (from sale in _unitOfWork.Sales.GetAll(typeof(SalePoint).Name)
-              join customer in _unitOfWork.Customers.GetAll(typeof(SaleChannel).Name, typeof(CustomerDetails).Name) on sale.SalePoint.CustomerId equals customer.Id
+              join customer in _unitOfWork.Customers.GetAll(typeof(CustomerDetails).Name) on sale.SalePoint.CustomerId equals customer.Id
               join price in _unitOfWork.Prices.GetAll() on sale.ProductId equals price.ProductId
               select new SaleInfoByCustomerModel {Id =  customer.Id, CustomerName = GetFullName(customer.CustomerDetails), SalesSum = price.Value * sale.Count})
               .OrderByDescending(s => s.SalesSum);

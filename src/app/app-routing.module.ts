@@ -8,7 +8,7 @@ import {PlaybookComponent} from './components/playbook/playbook.component';
 import { FeatureDescriptionComponent } from './components/feature-description/feature-description.component';
 import { HelpComponent } from './components/help/help.component';
 import { HomeComponent } from './components/home/home.component';
-import {AnalyzeComponent} from './components/analyze/analyze.component';
+import {AnalyzeParentComponent} from './components/analyze-parent/analyze-parent.component';
 import {ScanComponent} from './components/scan/scan.component';
 import {ServicesComponent} from './components/services/services.component';
 import {UserProfileComponent} from './components/user-profile/user-profile.component';
@@ -64,7 +64,7 @@ const routes: Routes = [
       ,
       {
         path: 'analyze',
-        component: AnalyzeComponent
+        component: AnalyzeParentComponent
       }
       ,
       {

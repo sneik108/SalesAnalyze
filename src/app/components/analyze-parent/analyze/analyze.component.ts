@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxCarousel } from 'ngx-carousel';
-import { IChartItem } from '../../interfaces/IChartItem';
+import { IChartItem } from '../../../interfaces/IChartItem';
+import { IDatatableSettings } from '../../../interfaces/IDatatableSettings';
+import { ISaleInfoByCustomer } from '../../../interfaces/ISaleInfoByCustomer';
 import { forEach } from '@angular/router/src/utils/collection';
-import { GuidGeneratorService } from '../../services/guid-generator.service';
-import { SourceService } from '../../services/source.service';
+import { GuidGeneratorService } from '../../../services/guid-generator.service';
+import { SourceService } from '../../../services/source.service';
 import { $ } from 'protractor';
 
 @Component({
@@ -36,6 +38,32 @@ export class AnalyzeComponent implements OnInit {
   //charts
   allSalesForYear: IChartItem[];
   salesBySaleChannels: IChartItem[];
+  //datatables
+  salesInfoByCustomer: ISaleInfoByCustomer;
+  salesBySaleChannelsSettings: IDatatableSettings = {
+    showOperations: false, properties: [{
+      property: 'id',
+      header: 'Id',
+      resizable: true,
+      sortable: true
+      // width: 500,
+    },
+    {
+      property: 'customerName',
+      header: 'Name',
+      resizable: true,
+      sortable: true
+      // width: 100,
+    },
+    {
+      property: 'salesSum',
+      header: 'Sum',
+      resizable: true,
+      sortable: true
+      // width: 100,
+    }
+    ]
+  };
 
   constructor(private _helper: GuidGeneratorService, private _source: SourceService) { }
 
@@ -48,8 +76,11 @@ export class AnalyzeComponent implements OnInit {
     vm.fillChartWithSalesByMonth();
     vm.fillChartWithSalesByChannels();
     vm.fillTop10CustomersBySum();
+    vm.fillDatatableWithCustomersInfo();
   }
-
+  public onDatatableItemSelect(customerId: number){
+    alert(customerId);
+  }
   public myfunc(event: Event) {
     // carouselLoad will trigger this funnction when your load value reaches
     // it is helps to load the data by parts to increase the performance of the app
@@ -126,6 +157,15 @@ export class AnalyzeComponent implements OnInit {
     const vm = this;
     vm._source.salesBySaleChannels().subscribe(resp => {
       vm.salesBySaleChannels = resp.json();
+    });
+  }
+
+  private fillDatatableWithCustomersInfo(){
+    const vm = this;
+    vm._source.salesInfoByCustomer().subscribe(resp => {
+      vm.salesInfoByCustomer = resp.json();
+      console.log('vm.salesInfoByCustomer');
+      console.log(vm.salesInfoByCustomer);
     });
   }
 

@@ -1,0 +1,26 @@
+@import "../../../../scss/mixins.scss";
+
+.container-quick-search {
+  @include container-sidbar-search;
+  position: relative;
+
+
+}
+
+.align-to-bottom {
+  text-align: center;
+  position: absolute;
+  // left: 25%;
+  bottom: 1rem;
+}
+@media (min-width: 1199px) {
+  .container-quick-search {
+    width: 18rem;
+  }
+ }
+@media (min-width: 767px) {
+  .container-quick-search {
+    width: 15rem;
+  }
+ }
+
